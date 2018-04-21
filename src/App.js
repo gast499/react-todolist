@@ -1,7 +1,11 @@
 import React from 'react';
-import './App.css';
+import AddTodo from './components/addTodo/';
 
 const App = () => (
-    <div>My Todo App</div>
+    <div>
+        <h1>My Todo list</h1>
+        <AddTodo submitTodo={() => {}} />
+    </div>
 );
+
 export default App;
