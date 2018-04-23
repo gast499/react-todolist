@@ -3,16 +3,24 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import AddTodo from './components/addTodo/';
 import actions from './actions/';
+import TodoList from './components/todoList';
 
-export const App = ({ submitTodo }) => (
+export const App = ({ submitTodo, todos }) => (
     <div>
         <h1>My Todo list</h1>
         <AddTodo submitTodo={submitTodo} />
+        <TodoList todos={todos} />
     </div>
 );
 
 App.propTypes = {
     submitTodo: PropTypes.func.isRequired,
+    todos: PropTypes.arrayOf(PropTypes.shape(
+        {
+            id: PropTypes.number.isRequired,
+            text: PropTypes.string.isRequired,
+        },
+    )).isRequired,
 };
 
 const mapStateToProps = state => state.todoListApp;
