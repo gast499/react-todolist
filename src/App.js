@@ -7,7 +7,7 @@ import TodoList from './components/todoList';
 
 export const App = ({ submitTodo, todos, deleteTodo }) => (
     <div>
-        <h1>My Todo list</h1>
+        <h1>Tameem's Todo List</h1>
         <AddTodo submitTodo={submitTodo} />
         <TodoList todos={todos} deleteTodo={deleteTodo}/>
     </div>

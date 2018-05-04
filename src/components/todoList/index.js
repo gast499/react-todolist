@@ -1,21 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import FlipMove from 'react-flip-move';
 
 const TodoList = ({ todos, deleteTodo }) => {
     const todoItems = todos.map(todo => (
-        <li key={todo.id}>
-            <button
-                type="button"
-                className="todo-delete"
-                onClick={() => deleteTodo(todo.id)}>
-                Delete</button>
-            <span className="todo-text">{todo.text}</span>
+        <li className="todo-item" onClick={() => deleteTodo(todo.id)} key={todo.id}>
+            <span className="todo-text" >{todo.text}</span>
         </li>
     ));
 
     return (
-        <ul>
-            {todoItems}
+        <ul className="todo-list">
+            <FlipMove duration={250} easing="ease-out">
+                {todoItems}
+            </FlipMove>
         </ul>
     );
 };
@@ -27,5 +25,6 @@ TodoList.propTypes = {
             text: PropTypes.string.isRequired,
         },
     )).isRequired,
+    deleteTodo: PropTypes.func.isRequired,
 };
 export default TodoList;
