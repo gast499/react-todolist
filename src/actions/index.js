@@ -21,6 +21,19 @@ const actions = {
             id,
         };
     },
+    toggleTodo(id) {
+        return {
+            type: types.TOGGLE_TODO,
+            id,
+        };
+    },
+    editTodo(id, text) {
+        return {
+            type: types.EDIT_TODO,
+            id,
+            text,
+        };
+    },
 };
 
 export default actions;
