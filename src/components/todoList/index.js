@@ -35,10 +35,8 @@ const TodoList = ({ todos, deleteTodo, toggleTodo, editTodo }) => {
                         input = element;
                     }} onClick={stopPropagation}/>
                     <button type="Submit" onClick={stopPropagation}><i className="fa fa-check"></i></button>
-                    {/*<span className="todo-edit"><i className="fa fa-pencil"></i></span>*/}
                 </form>
             </div>
-            {/*<span className="todo-edit" onClick={() => edit(todo.id)}><i className="fa fa-pencil"></i></span>*/}
             <span className="todo-delete" onClick={() => deleteTodo(todo.id)}><i className="fa fa-trash"></i></span>
         </li>
         )});

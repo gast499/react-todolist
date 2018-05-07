@@ -1,4 +1,3 @@
-import types from '../constants/';
 import {combineReducers} from 'redux';
 import todos from './todos';
 
